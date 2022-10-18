@@ -1,7 +1,18 @@
 <?php
 
 function do_register() {
-    render_view('register');
+    $method = $_SERVER['REQUEST_METHOD'];
+    
+    switch ($method) {
+        case 'GET':
+            render_view('register');
+            break;
+        case 'POST':
+            $user = $_POST['person'];
+            crud_create($user);
+            header('location: /?page=login');
+            break;
+    }
 }
 
 function do_login() {
