@@ -1,4 +1,14 @@
 <?php
-$page = ($_GET['page']??'login').'.view';
-$content = file_get_contents(VIEW_FOLDER.$page);
-echo $content;
+
+switch ($_GET['page'] ?? null) {
+    case 'register':
+        do_register();
+        break;
+    case 'login':
+    case null:
+        do_login();
+        break;
+    default:
+        do_not_found();
+        break;
+}

@@ -1,3 +1,6 @@
 <?php
+
+require_once 'controller.php';
+require_once 'view.php';
 include 'config.php';
 include 'routes.php';
