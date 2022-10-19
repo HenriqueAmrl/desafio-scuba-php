@@ -8,5 +8,10 @@
             "email": "david.meth@live.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
 }

@@ -1,14 +1,18 @@
 <?php
 
+use App\User\UserController;
+
+$userController = new UserController();
+
 switch ($_GET['page'] ?? null) {
     case 'register':
-        do_register();
+        $userController->do_register();
         break;
     case 'login':
     case null:
-        do_login();
+        $userController->do_login();
         break;
     default:
-        do_not_found();
+        $userController->do_not_found();
         break;
 }
